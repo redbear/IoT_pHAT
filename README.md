@@ -8,7 +8,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 	Note for beta testers with older version of the IoT pHAT:
 
-	This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
+		This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
 
 * Front View
 
@@ -51,7 +51,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 * Model Name			: IoT pHAT
 * Product Description	: WiFi and Bluetooth connectivity add-on board for Raspberry Pi Zero
-* Dimension				: (TBD)
+* Dimension				: 64 mm x 30 mm
 * WiFi Interface		: SDIO v2.0
 * Bluetooth Interface	: UART / PCM
 * Operating voltage		: 3.3V
@@ -61,26 +61,29 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 ### WiFi
 
-* Data Rate
-	- 802.11b: 1, 2, 5.5, 11 Mbps
-	- 802.11g: 6, 9, 12, 18, 24, 36, 48, 54 Mbps
+![image](docs/images/WiFiSpec.png)
 
+### Bluetooth
 
-## How it works
-
-* (To be written)
+![image](docs/images/BTSpec.png)
 
 
 ## How to play
 
 ### Prerequisite
 
-* Raspberry Pi Zero or other model with 40 pin connector header
+* Raspberry Pi Zero or other models with 40 pin connector header
+	- HDMI Cable (you may also need a mini HDMI to normal HDMI convertor)
+	- USB Keyboard (you may also need a micro to type A USB convertor)
+	- Power adpater (5V) with micro USB connector
 * SD Card with [NOOBS or Raspian](https://www.raspberrypi.org/downloads/) installed
 
-### Connect the boards (first time)
+### Setting up the boards (first time)
+
+![image](docs/images/PiZero_IoT.png)
 
 * Stack the IoT pHAT on top of the RPi Zero
+* Connect the board to your TV or monitor via the HDMI cable
 * Connect your RPi with a wired keyboard (For associate WiFi to access point and connect Bluetooth accessories)
 * Power on with an micro USB cable with power adpater
 
@@ -99,6 +102,9 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 *** We are trying to automate the Bluetooth part, too.
 
+### Pair Keyboard/Mouse/Gamepad
+
+You can use the command line tool `bluetoothctl` or the Bluetooth manager (GUI) to pair your Bluetooth accessories.
 
 ## Limitations
 
