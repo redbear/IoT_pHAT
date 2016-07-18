@@ -1,8 +1,14 @@
 # IoT pHAT
 
-RedBear IoT pHAT, designed for the Raspberry Pi Zero.
+RedBear IoT pHAT, designed for the Raspberry Pi Zero (Other RPi boards with 40-pin header will also work).
 
-This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
+The RPi Zero is a nice board, it is small in size which is very good for developing IoT projects. However, it lacks of wireless features such as WiFi and Bluetooth.
+
+With the IoT pHAT, now, your RPi Zero will get more powerful than before. It adds WiFi and Bluetooth wireless technologies to the RPi Zero.
+
+	Note for beta testers with older version of the IoT pHAT:
+
+	This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
 
 * Front View
 
@@ -70,11 +76,18 @@ This is for the hardware version 1.0 only, the EEPROM contains the information f
 ### Prerequisite
 
 * Raspberry Pi Zero or other model with 40 pin connector header
-* SD Card with Raspian installed
+* SD Card with [NOOBS or Raspian](https://www.raspberrypi.org/downloads/) installed
 
-### WiFi (Plug & Play)
+### Connect the boards (first time)
 
-Stack the IoT pHAT to your Pi Zero, after booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi, so you can use the WiFi to connect to your wireless router or access point directly.
+* Stack the IoT pHAT on top of the RPi Zero
+* Connect your RPi with a wired keyboard (For associate WiFi to access point and connect Bluetooth accessories)
+* Power on with an micro USB cable with power adpater
+
+### WiFi
+
+* After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi
+* Now you can use the WiFi to connect to your wireless router or access point directly.
 
 ### Bluetooth (3 changes required)
 
@@ -90,3 +103,5 @@ Stack the IoT pHAT to your Pi Zero, after booting up, the Linux kernel will read
 ## Limitations
 
 * FM is not supported with the board
+* Although the board supports Bluetooth keyboard, you still need to use a wired keyboard to set up for it.
+
