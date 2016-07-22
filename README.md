@@ -40,34 +40,6 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 * FCC/CE certified
 
 
-## Pinout
-
-![image](docs/images/IoT_pHAT_40-pin.png)
-
-
-## Specification
-
-### General
-
-* Model Name			: IoT pHAT
-* Product Description	: WiFi and Bluetooth connectivity add-on board for Raspberry Pi Zero
-* Dimension				: 64 mm x 30 mm
-* WiFi Interface		: SDIO v2.0
-* Bluetooth Interface	: UART / PCM
-* Operating voltage		: 3.3V
-* Operating temperature	: -30˚C to 85˚C
-* Storage template		: -40˚C to 85˚C
-* Humidity				: Operating Humidity 10% to 95% Non-Condensing
-
-### WiFi
-
-![image](docs/images/WiFiSpec.png)
-
-### Bluetooth
-
-![image](docs/images/BTSpec.png)
-
-
 ## How to play
 
 ### Prerequisite
@@ -105,6 +77,39 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 ### Pair Keyboard/Mouse/Gamepad
 
 You can use the command line tool `bluetoothctl` or the Bluetooth manager (GUI) to pair your Bluetooth accessories.
+
+
+## Pinout
+
+The following diagram shows the pins of the RPi 40-pin connector occupied by the IoT pHAT board.
+
+Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD of the IoT pHAT, the same case applied to RXD, CTS and RTS pins. 
+
+![image](docs/images/IoT_pHAT_40-pin.png)
+
+
+## Specification
+
+### General
+
+* Model Name			: IoT pHAT
+* Product Description	: WiFi and Bluetooth connectivity add-on board for Raspberry Pi Zero
+* Dimension				: 64 mm x 30 mm
+* WiFi Interface		: SDIO v2.0
+* Bluetooth Interface	: UART / PCM
+* Operating voltage		: 3.3V
+* Operating temperature	: -30˚C to 85˚C
+* Storage template		: -40˚C to 85˚C
+* Humidity				: Operating Humidity 10% to 95% Non-Condensing
+
+### WiFi
+
+![image](docs/images/WiFiSpec.png)
+
+### Bluetooth
+
+![image](docs/images/BTSpec.png)
+
 
 ## Limitations
 
