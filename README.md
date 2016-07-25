@@ -9,7 +9,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 	Note for beta testers with older version of the IoT pHAT:
 
 		This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
-
+	
 * Front View
 
 	![image](docs/images/IoT_pHAT_front.png)
@@ -64,19 +64,16 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 * After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi
 * Now you can use the WiFi to connect to your wireless router or access point directly.
 
-### Bluetooth (3 changes required)
+### Bluetooth
 
-1. Edit `/boot/config.txt`, add `init_uart_clock=64000000` to the end
-2. Edit `/boot/cmdline.txt`, remove `console=serial0,115200`
-3. Edit `/lib/systemd/system/hciuart.service`, change `/dev/serial1` to `/dev/serial0`
-4. Reboot the board with `sudo reboot`
-5. You will see the Bluetooth is ready to use
+* Again, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART.
+* You will see the Bluetooth is ready to use by using the Bluetooth manager (the Bluetooth icon) near to the clock (upper-right corner) or using the command line,
 
-*** We are trying to automate the Bluetooth part, too.
+	`$ hciconfig`
 
 ### Pair Keyboard/Mouse/Gamepad
 
-You can use the command line tool `bluetoothctl` or the Bluetooth manager (GUI) to pair your Bluetooth accessories.
+You can use the command line tool `bluetoothctl` or the Bluetooth manager to pair your Bluetooth accessories.
 
 
 ## Pinout

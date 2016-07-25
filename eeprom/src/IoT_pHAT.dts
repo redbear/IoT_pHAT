@@ -55,7 +55,7 @@
 		};
 	};
 
-	fragment@12 {
+	fragment@6 {
 		target-path = "/";
 		__overlay__ {
 			power_ctrl_bt: power_ctrl_bt {
@@ -66,7 +66,7 @@
 		};
 	};
 
-	fragment@6 {
+	fragment@7 {
 		target = <&gpio>;
 		__overlay__ {
 			power_ctrl_pins: power_ctrl_pins {
@@ -76,7 +76,7 @@
 		};
 	};
 
-	fragment@10 {
+	fragment@8 {
 		target = <&gpio>;
 		__overlay__ {
 			bt_pins: bt_pins {
@@ -87,7 +87,7 @@
 		}; 
 	};
 
-	fragment@11 {
+	fragment@9 {
 		target-path = "/soc";
 		__overlay__ {
 			iothat {
@@ -98,28 +98,38 @@
 		};
 	};
 
-//	fragment@7 {
-//		target = <&uart0>;
-//		__overlay__ {
-//			pinctrl-names = "default";
-//			pinctrl-0 = <&uart0_pins &bt_pins>;
-//			status = "okay";
-//		};
-//	};
+	fragment@10 {
+		target = <&uart1>;
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <&uart1_pins>;
+			status = "okay";
+		};
+	};
 
-//	fragment@8 {
-//		target = <&uart0_pins>;
-//		__overlay__ {
-//			brcm,pins = <14 15>;
-//			brcm,function = <2>;
-//			brcm,pull = <0 2>;
-//		};
-//	};
+	fragment@11 {
+		target = <&gpio>;
+		__overlay__ {
+			uart1_pins: uart1_pins {
+				brcm,pins = <14 15>;
+				brcm,function = <2>;
+				brcm,pull = <0 2>;
+			};
+		};
+	};
 
-	fragment@9 {
+	fragment@12 {
+		target-path = "/chosen";
+		__overlay__ {
+			bootargs = "8250.nr_uarts=1 bcm2709.uart_clock=3000000";
+		};
+	};
+
+	fragment@13 {
 		target-path = "/aliases";
 		__overlay__ {
 			serial0 = "/soc/uart@7e201000";
+			serial1 = "/soc/uart@7e215040";
 		};
 	};
 };

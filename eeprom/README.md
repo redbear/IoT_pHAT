@@ -1,8 +1,9 @@
 # IoT pHAT
 
+
 ## EEPROM
 
-These are the steps to write the configuration to the EEPROM
+These are the steps to write the configuration to the EEPROM, change the current path to eeprom/bin first.
 
 Step 1:
 
@@ -16,12 +17,13 @@ Step 3:
 
 sudo ./eepflash.sh -f=IoT_pHAT-with-dt.eep -t=24c32 -w
 
+
 ## Reference
 
-1. Sense HAT
+* Sense HAT
 
-https://www.raspberrypi.org/documentation/hardware/sense-hat/
+	https://www.raspberrypi.org/documentation/hardware/sense-hat/
 
-2. Howto: Raspi HAT EEPROM and device-tree
+* Howto: Raspi HAT EEPROM and device-tree
 
-https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=108134
+	https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=108134
