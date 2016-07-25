@@ -3,19 +3,35 @@
 
 ## EEPROM
 
-These are the steps to write the configuration to the EEPROM, change the current path to eeprom/bin first.
+### Prerequisites
 
-Step 1:
+* Add `dtpatam=i2c_vc=on` to the /boot/config.txt file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
 
-sudo dtc -@ -I dts -O dtb -o IoT_pHAT.dtb IoT_pHAT.dts ; sudo chown pi:pi IoT_pHAT.dtb
+* After all operations, remove that line, otherwise, will affect you to use the camera module.
+ 
+### If you just want to write the compiled configuration file
 
-Step 2:
+* Change the current path to eeprom/bin first.
 
-./eepmake eeprom_settings.txt IoT_pHAT-with-dt.eep IoT_pHAT.dtb
+* Use this command:
 
-Step 3:
+	`$ sudo ./eepflash.sh -f=IoT_pHAT-with-dt.eep -t=24c32 -w`
 
-sudo ./eepflash.sh -f=IoT_pHAT-with-dt.eep -t=24c32 -w
+### If you want to compile the configuration file yourself
+
+* Change the current path to eeprom/src first.
+
+* Step 1 - Compile the DTS:
+
+	`$ sudo dtc -@ -I dts -O dtb -o IoT_pHAT.dtb IoT_pHAT.dts ; sudo chown pi:pi IoT_pHAT.dtb`
+
+* Step 2 - Combine the settings to the DTB:
+
+	`./eepmake eeprom_settings.txt IoT_pHAT-with-dt.eep IoT_pHAT.dtb`
+
+* Step 3 - Writing to the EEPROM:
+
+	`$ sudo ./eepflash.sh -f=IoT_pHAT-with-dt.eep -t=24c32 -w`
 
 
 ## Reference
