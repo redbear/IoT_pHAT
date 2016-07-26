@@ -48,7 +48,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 	- HDMI Cable (you may also need a mini HDMI to normal HDMI convertor)
 	- USB Keyboard (you may also need a micro to type A USB convertor)
 	- Power adpater (5V) with micro USB connector
-* SD Card with [NOOBS or Raspian](https://www.raspberrypi.org/downloads/) installed
+* SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 1.9.2)
 
 ### Setting up the boards (first time)
 
@@ -63,6 +63,9 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 * After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi
 * Now you can use the WiFi to connect to your wireless router or access point directly.
+* You will see the WiFi driver is up by typing the follow command using the command line,
+
+	`$ ifconfig`
 
 ### Bluetooth
 
