@@ -8,7 +8,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 	Note for beta testers with older version of the IoT pHAT:
 
-		This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi and other settings.
+		This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi, Bluetooth and other settings.
 	
 * Front View
 
@@ -45,12 +45,19 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 ### Prerequisites
 
 * Raspberry Pi Zero or other models with 40 pin connector header
-	- HDMI Cable (you may also need a mini HDMI to normal HDMI convertor)
-	- USB Keyboard (you may also need a micro to type A USB convertor)
+	- HDMI Cable
+	- USB Keyboard
 	- Power adpater (5V) with micro USB connector
 * SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 1.9.2)
-
-### Setting up the boards (first time)
+* Additional Items for RPi Zero
+	- Mini HDMI to normal HDMI convertor
+	- Micro to Type-A USB convertor
+* Optional
+	- Bluetooth Keyboard
+	- Bluetooth Mouse
+	- Bluetooth Gamepad
+		
+### Setting up the boards
 
 ![image](docs/images/PiZero_IoT.png)
 
@@ -58,6 +65,11 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 * Connect the board to your TV or monitor via the HDMI cable
 * Connect your RPi with a wired keyboard (For associate WiFi to access point and connect Bluetooth accessories)
 * Power on with an micro USB cable with power adpater
+
+The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and RPi 2.
+
+![image](docs/images/Model_A_Plus.png)
+![image](docs/images/Pi2.png)
 
 ### WiFi
 
