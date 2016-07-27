@@ -1,6 +1,6 @@
 # IoT pHAT
 
-RedBear IoT pHAT, designed for the Raspberry Pi Zero (Other RPi boards with 40-pin header will also work).
+RedBear IoT pHAT, designed for the Raspberry Pi Zero (other RPi boards with 40-pin header will also work).
 
 The RPi Zero is a nice board, it is small in size which is very good for developing IoT projects. However, it lacks of wireless features such as WiFi and Bluetooth.
 
