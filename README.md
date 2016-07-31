@@ -127,4 +127,4 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 
 * FM is not supported with the board
 * Although the board supports Bluetooth keyboard, you still need to use a wired keyboard to set up for it.
-
+* The TXD and RXD pins are used by the IoT pHAT, so you will not be able to use serial debug and BT at the same time for your RPi. Also, you will not be able to connect to other serial devices such as a GPS module.
