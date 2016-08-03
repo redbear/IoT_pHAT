@@ -86,6 +86,38 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 
 	`$ hciconfig`
 
+	or
+	
+	`$ systemctl status hciuart.service`
+
+Update: the UART 1 we are using for controlling the BT is not stable during starting up, it will fail to load the driver sometimes.
+
+In the meantime, please change the following file to fix this issue as a workaround and we will provide an update to the EEPROM to fix this as soon as possible.
+
+	$ sudo nano /lib/systemd/system/hciuart.service
+
+change the content:
+
+	[Unit]
+	Description=Configure Bluetooth Modems connected by UART
+	ConditionPathIsDirectory=/proc/device-tree/soc/gpio@7e200000/bt_pins
+	Before=bluetooth.service
+	After=dev-serial1.device
+	
+	[Service]
+	Type=forking
+	Restart=on-failure
+	ExecStartPre=/usr/bin/gpio -g write 5 0
+	ExecStartPre=/usr/bin/gpio -g write 5 1
+	ExecStart=/usr/bin/hciattach /dev/serial1 bcm43xx 921600 noflow -
+	
+	[Install]
+	WantedBy=multi-user.target
+
+reboot your RPi:
+
+	$ sudo reboot
+	
 ### Pair Keyboard/Mouse/Gamepad
 
 You can use the command line tool `bluetoothctl` or the Bluetooth manager to pair your Bluetooth accessories.
@@ -121,6 +153,11 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 ### Bluetooth
 
 ![image](docs/images/BTSpec.png)
+
+
+## Known Issues
+
+* The BT UART is not stable and it is a software problem, it will be fixed as soon as possible. For a workaround, please read `How to play: Bluetooth`. 
 
 
 ## Limitations
