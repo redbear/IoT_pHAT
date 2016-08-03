@@ -160,6 +160,12 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 * The BT UART is not stable and it is a software problem, it will be fixed as soon as possible. For a workaround, please read `How to play: Bluetooth`. 
 
 
+## Resources
+
+* [IoT pHAT Product Website](http://redbear.cc/iot-phat)
+* [Technical Support Forum](http://discuss.redbear.cc/c/iot-phat)
+
+
 ## Limitations
 
 * FM is not supported with the board
