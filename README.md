@@ -73,12 +73,21 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 
 ### WiFi
 
-* After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi
-* Now you can use the WiFi to connect to your wireless router or access point directly.
-* You will see the WiFi driver is up by typing the follow command using the command line,
+* After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi driver
+* Now you can use WiFi to connect to your wireless router or access point directly.
+* You will see the WiFi driver (wlan0) is up by typing the follow command using the command line,
 
 	`$ ifconfig`
 
+* Trouble-shooting
+	- if you do not see the wlan0 device using `ifconfig`, then use the following command, you should see there is a folder named `iothat`. It should be something wrong if you do not see it.
+	
+		```
+		$ ls /proc/device-tree/soc/
+		```
+		
+	- check if your board comes without the 40-pin connector, make sure you soldered it correctly and check the I2C ID EEPROM pins (see the pinout diagram for details). 
+	
 ### Bluetooth
 
 * Again, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART.
@@ -162,8 +171,14 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 
 ## Resources
 
+### RedBear
+
 * [IoT pHAT Product Website](http://redbear.cc/iot-phat)
 * [Technical Support Forum](http://discuss.redbear.cc/c/iot-phat)
+
+### External
+
+* [Linux iBeacon](https://github.com/dburr/linux-ibeacon/)
 
 
 ## Limitations
