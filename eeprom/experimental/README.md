@@ -9,7 +9,9 @@
 
 	- This version makes use the UART0 on GPIO 14 and 15 for the Bluetooth, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part.
 	
-	- With this, you do not need to modify the script file from `/lib/systemd/system/hciuart.service`
+	- With this, you do not need to modify the script file from,
+	
+		 `$ nano /lib/systemd/system/hciuart.service`
 	
 		The original:
 		
@@ -27,6 +29,14 @@
 		[Install]
 		WantedBy=multi-user.target		
 		```
+
+	- Modify the file to set UART clock,
+	
+		`$ nano /boot/config.txt`
+		
+		Add to the end,
+		
+		`init_uart_clock=48000000`
 
 ### Prerequisites
 
