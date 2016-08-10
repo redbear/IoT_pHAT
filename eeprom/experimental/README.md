@@ -34,9 +34,15 @@
 
 * After all operations, remove that line, otherwise, it will affect you to use the camera module.
 
-* Download the EEPROM file,
+* Download the EEPROM and script files (do this inside your RPi if you have WiFi connected already),
 
-	`https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/IoT_pHAT-with-dt.eep`
+	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/IoT_pHAT-with-dt.eep`
+
+	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/eepflash.sh`
+
+* Change the flash tool mode to executable,
+
+	`$ chmod +x eepflash.sh`
 
 ### If you just want to write the compiled configuration file
 
