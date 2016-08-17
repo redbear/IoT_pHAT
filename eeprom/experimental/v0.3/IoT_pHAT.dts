@@ -28,7 +28,7 @@
 			pinctrl-0 = <&sdio_pins>;
 			non-removable;
 			bus-width = <4>;
-			brcm,overclock-50 = <0>;
+			brcm,overclock-50 = <20>;
 			status = "okay";
 		};
 	};
