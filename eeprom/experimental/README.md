@@ -32,7 +32,7 @@
 
 	- Modify the file to set UART clock,
 	
-		`$ nano /boot/config.txt`
+		`$ sudo nano /boot/config.txt`
 		
 		Add to the end,
 		
@@ -69,7 +69,7 @@
 
 ### If you want to compile the configuration file yourself
 
-* Step 1 - Compile the DTS:
+* Step 1 - Compile the DTS file:
 
 	`$ sudo dtc -@ -I dts -O dtb -o IoT_pHAT.dtb IoT_pHAT.dts ; sudo chown pi:pi IoT_pHAT.dtb`
 
