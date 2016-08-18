@@ -35,7 +35,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
  	- Antenna switch for extenal antenna
 * 32 Kbit (4 KByte) EEPROM for DTOverlay configuration
 * 40-pin connector
-	- WiFi: SDIO v2.0 - up to 50 MHz clock rate
+	- WiFi: SDIO v2.0 - up to 20 MHz clock rate
 	- Bluetooth: UART (up to 4 Mbps)
 * FCC/CE certified
 
@@ -71,15 +71,31 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 ![image](docs/images/Model_A_Plus.png)
 ![image](docs/images/Pi2.png)
 
+
+### Updating the EEPROM
+
+* Check EEPROM firmware version
+
+	- `$ cat /proc/device-tree/hat/product` 
+	- if it shows `IoT pHAT`, then the update is required.
+	- if it shows `IoT pHAT w/eep_v0.3`, then you do not need to update it.
+	
+* The WiFi is not stable with SDIO 40 MHz clock and we need to reduce to 20 MHz.
+
+* Follow [this guide](eeprom/experimental) to update the EEPROM with version 0.3.
+
 ### WiFi
 
 * After booting up, the Linux kernel will read the configuration from the onboard EEPROM, it will turn on the WiFi driver
+
 * Now you can use WiFi to connect to your wireless router or access point directly.
+
 * You will see the WiFi driver (wlan0) is up by typing the follow command using the command line,
 
 	`$ ifconfig`
 
 * Trouble-shooting
+
 	- if you do not see the wlan0 device using `ifconfig`, then use the following command, you should see there is a folder named `iothat`. It should be something wrong if you do not see it.
 	
 		```
@@ -90,7 +106,14 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	
 ### Bluetooth
 
-* Again, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART.
+* The default UART clock will not work for the Bluetooth, we need to add set the clock to 48MHz (working with the [RPi team](https://github.com/redbear/IoT_pHAT/issues/4) so that we do not need to change the clock).
+
+	- use `$ sudo nano /boot/config.txt` to edit the file
+	- add `init_uart_clock=48000000` to the end
+	- reboot by `$ sudo reboot`
+
+* Again, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART which maps UART0 to GPIO 14 and 15.
+
 * You will see the Bluetooth is ready to use by using the Bluetooth manager (the Bluetooth icon) near to the clock (upper-right corner) or using the command line,
 
 	`$ hciconfig`
@@ -99,33 +122,7 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	
 	`$ systemctl status hciuart.service`
 
-Update: the UART 1 we are using for controlling the BT is not stable during starting up, it will fail to load the driver sometimes.
 
-In the meantime, please change the following file to fix this issue as a workaround and we will provide an update to the EEPROM to fix this as soon as possible.
-
-	$ sudo nano /lib/systemd/system/hciuart.service
-
-change the content:
-
-	[Unit]
-	Description=Configure Bluetooth Modems connected by UART
-	ConditionPathIsDirectory=/proc/device-tree/soc/gpio@7e200000/bt_pins
-	Before=bluetooth.service
-	After=dev-serial1.device
-	
-	[Service]
-	Type=forking
-	Restart=on-failure
-	ExecStartPre=/usr/bin/gpio -g write 5 0
-	ExecStartPre=/usr/bin/gpio -g write 5 1
-	ExecStart=/usr/bin/hciattach /dev/serial1 bcm43xx 921600 noflow -
-	
-	[Install]
-	WantedBy=multi-user.target
-
-reboot your RPi:
-
-	$ sudo reboot
 	
 ### Pair Keyboard/Mouse/Gamepad
 
@@ -166,7 +163,9 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 
 ## Known Issues
 
-* The BT UART is not stable and it is a software problem, it will be fixed as soon as possible. For a workaround, please read `How to play: Bluetooth`. 
+* Default EEPROM firmware is v0.2
+	- The BT UART1 is not stable, modify the EEPROM with v0.3 which will use UART0 instead
+	- The WiFi is not stable, modify the EEPROM with 0.3 to lower the SDIO clock from 40MHz to 20MHz.
 
 
 ## Resources

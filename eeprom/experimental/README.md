@@ -1,13 +1,13 @@
 # IoT pHAT
 
 
-## EEPROM (Experimental)
+## EEPROM
 
 ### Version
 
 * v0.3
 
-	- This version makes use the UART0 on GPIO 14 and 15 for the Bluetooth, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part.
+	- This version makes use the UART0 on GPIO 14 and 15 for the Bluetooth, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part. Also, this reduce the SDIO clock for WiFi from 40 MHz to 20 MHz to make it more stable.
 	
 	- With this, you do not need to modify the script file from,
 	
@@ -40,10 +40,13 @@
 
 ### Prerequisites
 
-* Add `dtparam=i2c_vc=on` to the /boot/config.txt file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
+* Add `dtparam=i2c_vc=on` to the `/boot/config.txt` file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
 
-* After all operations, remove that line, otherwise, it will affect you to use the camera module.
-
+	The steps:
+	- $ sudo nano /boot/config.txt
+	- add dtparam=i2c_vc=on to the end
+	- $ sudo reboot
+	
 * Download the EEPROM and script files (do this inside your RPi if you have WiFi connected already),
 
 	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/IoT_pHAT-with-dt.eep`
@@ -81,6 +84,11 @@
 * Step 4 - Reboot
 
 	`$ sudo reboot`
+
+
+### Note
+
+* After all operations, remember to remove the line (`dtparam=i2c_vc=on`) in the /boot/config.txt file, otherwise, it will affect you to use the camera module.
 
 
 ## Reference
