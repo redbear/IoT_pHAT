@@ -127,7 +127,7 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 		$ ls /proc/device-tree/soc/
 		```
 		
-	- check if your board comes without the 40-pin connector, make sure you soldered it correctly and check the I2C ID EEPROM pins (see the pinout diagram for details). 
+	- check if your board comes without the 40-pin connector soldered, make sure your soldering is correct and check the I2C ID EEPROM pins (see the pinout diagram for details). 
 	
 ### Bluetooth
 
