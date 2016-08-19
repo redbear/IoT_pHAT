@@ -146,12 +146,24 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	or
 	
 	`$ systemctl status hciuart.service`
-
-
 	
-### Pair Keyboard/Mouse/Gamepad
+### Pairing Keyboard/Mouse/Gamepad
 
 You can use the command line tool `bluetoothctl` or the Bluetooth manager to pair your Bluetooth accessories.
+
+* Example for the command line, AA:BB:CC:DD:EE:FF here should be your Bluetooth keyboard MAC address. Make your keyboard into pairing mode first,
+
+	- $ sudo bluetoothctl
+	- [bluetooth]# agent KeyboardDisplay
+	- [bluetooth]# default-agent
+	- [bluetooth]# scan on
+	- [bluetooth]# pair AA:BB:CC:DD:EE:FF
+	- Enter the PIN code from the Bluetooth keyboard
+	- [bluetooth]# connect AA:BB:CC:DD:EE:FF
+	- [bluetooth]# trust AA:BB:CC:DD:EE:FF
+	- [bluetooth]# quit
+	 
+Note: It seems that the BlueZ does not support BLE keyboard and mouse.
 
 
 ## Pinout
