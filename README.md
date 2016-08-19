@@ -44,14 +44,19 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 ### Prerequisites
 
+* WiFi Router or Access Point (2.4 GHz enabled) and connected to the Internet
+
 * Raspberry Pi Zero or other models with 40 pin connector header
 	- HDMI Cable
 	- USB Keyboard
 	- Power adpater (5V) with micro USB connector
+
 * SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 1.9.2)
+
 * Additional Items for RPi Zero
 	- Mini HDMI to normal HDMI convertor
 	- Micro to Type-A USB convertor
+
 * Optional
 	- Bluetooth Keyboard
 	- Bluetooth Mouse
@@ -63,7 +68,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 
 * Stack the IoT pHAT on top of the RPi Zero
 * Connect the board to your TV or monitor via the HDMI cable
-* Connect your RPi with a wired keyboard (For associate WiFi to access point and connect Bluetooth accessories)
+* Connect your RPi with a wired keyboard (For associating WiFi to access point and pair Bluetooth accessories)
 * Power on with an micro USB cable with power adpater
 
 The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and RPi 2.
@@ -94,6 +99,26 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 
 	`$ ifconfig`
 
+* if you are in the command line, you can add your WiFi credentials to this file, it will connect to the AP automatically.
+
+	Edit the file,
+	
+	`$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+	
+	Add,
+	
+	```
+	network={
+		ssid="Your AP"
+		psk="Your PIN"
+		key_mgmt=WPA-PSK
+	}
+	```
+
+	Reboot,
+	
+	`$ sudo reboot`
+	
 * Trouble-shooting
 
 	- if you do not see the wlan0 device using `ifconfig`, then use the following command, you should see there is a folder named `iothat`. It should be something wrong if you do not see it.
