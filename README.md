@@ -49,13 +49,13 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 * Raspberry Pi Zero or other models with 40 pin connector header
 	- HDMI Cable
 	- USB Keyboard
-	- Power adpater (5V) with micro USB connector
+	- Power adapter (5V) with micro USB connector
 
 * SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 1.9.2)
 
 * Additional Items for RPi Zero
-	- Mini HDMI to normal HDMI convertor
-	- Micro to Type-A USB convertor
+	- Mini HDMI to normal HDMI converter
+	- Micro to Type-A USB converter
 
 * Optional
 	- Bluetooth Keyboard
@@ -220,5 +220,5 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 ## Limitations
 
 * FM is not supported with the board
-* Although the board supports Bluetooth keyboard, you still need to use a wired keyboard to set up for it.
+* Although the board supports Bluetooth keyboard, you still need to use a wired keyboard to set it up first.
 * The TXD and RXD pins are used by the IoT pHAT, so you will not be able to use serial debug and BT at the same time for your RPi. Also, you will not be able to connect to other serial devices such as a GPS module.
