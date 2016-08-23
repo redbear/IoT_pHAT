@@ -2,7 +2,7 @@
 
 RedBear IoT pHAT, designed for the Raspberry Pi Zero (other RPi boards with 40-pin header will also work).
 
-The RPi Zero is a nice board, it is small in size which is very good for developing IoT projects. However, it lacks of wireless features such as WiFi and Bluetooth.
+The RPi Zero is a nice board, it is small in size which is very good for developing IoT projects and prototypes. However, it lacks of wireless features such as WiFi and Bluetooth.
 
 With the IoT pHAT, now, your RPi Zero will get more powerful than before. It adds WiFi and Bluetooth wireless technologies to the RPi Zero.
 
@@ -131,7 +131,7 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	
 ### Bluetooth
 
-* The default UART clock will not work for the Bluetooth, we need to add set the clock to 48MHz (working with the [RPi team](https://github.com/redbear/IoT_pHAT/issues/4) so that we do not need to change the clock).
+* The default UART clock (3 MHz) will not work for the Bluetooth, so we need to set the clock to 48 MHz ([issue 4](https://github.com/redbear/IoT_pHAT/issues/4), it will be fixed in the next release of Raspbian, [raspberrypi/firmware/issues/643](https://github.com/raspberrypi/firmware/issues/643)).
 
 	- use `$ sudo nano /boot/config.txt` to edit the file
 	- add `init_uart_clock=48000000` to the end
@@ -153,16 +153,18 @@ You can use the command line tool `bluetoothctl` or the Bluetooth manager to pai
 
 * Example for the command line, AA:BB:CC:DD:EE:FF here should be your Bluetooth keyboard MAC address. Make your keyboard into pairing mode first,
 
-	- $ sudo bluetoothctl
-	- [bluetooth]# agent KeyboardDisplay
-	- [bluetooth]# default-agent
-	- [bluetooth]# scan on
-	- [bluetooth]# pair AA:BB:CC:DD:EE:FF
-	- Enter the PIN code from the Bluetooth keyboard
-	- [bluetooth]# connect AA:BB:CC:DD:EE:FF
-	- [bluetooth]# trust AA:BB:CC:DD:EE:FF
-	- [bluetooth]# quit
-	 
+	```
+	$ sudo bluetoothctl
+	[bluetooth]# agent KeyboardDisplay
+	[bluetooth]# default-agent
+	[bluetooth]# scan on
+	[bluetooth]# pair AA:BB:CC:DD:EE:FF
+	Enter the PIN code from the Bluetooth keyboard
+	[bluetooth]# connect AA:BB:CC:DD:EE:FF
+	[bluetooth]# trust AA:BB:CC:DD:EE:FF
+	[bluetooth]# quit
+	```
+	
 Note: It seems that the BlueZ does not support BLE keyboard and mouse.
 
 
