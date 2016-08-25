@@ -147,11 +147,13 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	
 	`$ systemctl status hciuart.service`
 	
-### Pairing Keyboard/Mouse/Gamepad
+### Pairing Bluetooth Keyboard/Mouse/Gamepad
 
 You can use the command line tool `bluetoothctl` or the Bluetooth manager to pair your Bluetooth accessories.
 
-* Example for the command line, AA:BB:CC:DD:EE:FF here should be your Bluetooth keyboard MAC address. Make your keyboard into pairing mode first,
+#### Keyboard
+
+* Example for using the command line, AA:BB:CC:DD:EE:FF here should be your Bluetooth keyboard MAC address. Make your keyboard into pairing mode first,
 
 	```
 	$ sudo bluetoothctl
@@ -166,6 +168,41 @@ You can use the command line tool `bluetoothctl` or the Bluetooth manager to pai
 	```
 	
 Note: It seems that the BlueZ does not support BLE keyboard and mouse.
+
+#### Gamepad (8Bitdo Zero)
+
+Prerequisites:
+
+* Charging the gamepad for a while.
+* Make sure it is turned off (holding the `START` button for 2 seconds to power ON/OFF).
+
+To pairing:
+
+* Set the gamepad to the correct mode by pressing and holding the `START` button until you see a white LED light on. Release the button, it will enter to the power off state.
+
+* Turn on the gamepad by holding the `START` button for 2 seconds.
+
+* Holding the `SELECT` button for 3 seconds to clear any previous pairing, you will see the white LED flash once, release it.
+
+* Use the follow steps:
+
+	```
+	$ sudo bluetoothctl
+	[bluetooth]# scan on
+	[bluetooth]# pair AA:BB:CC:DD:EE:FF	
+	[bluetooth]# connect AA:BB:CC:DD:EE:FF
+	[bluetooth]# trust AA:BB:CC:DD:EE:FF
+	[bluetooth]# quit
+	```
+	
+* To test the gamepad
+
+	```
+	$ sudo apt-get install joystick
+	$ jstest /dev/input/js0
+	```
+
+* If you paired two gamepad, the 2nd one will be the `/dev/input/js1` device.
 
 
 ## Pinout
