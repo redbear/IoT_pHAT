@@ -254,6 +254,7 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 ### External
 
 * [Linux iBeacon](https://github.com/dburr/linux-ibeacon/)
+* [Raspberry Pi HATs](https://github.com/raspberrypi/hats)
 
 
 ## Limitations
