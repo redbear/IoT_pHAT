@@ -118,14 +118,18 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	Reboot,
 	
 	`$ sudo reboot`
+
+* After associating to your router/AP, your RPi will broadcast mDNS service, so you do not need to know the IP address and the default host name is `raspberrypi.local`, you can use `ssh` to control your RPi from your computer remotely, we only tested on macOS and Linux, for Windows, you need a ssh utility and mDNS tool (e.g. Apple Bonjour SDK).
+
+	`$ ssh pi@raspberrypi.local`
+	
+	The default login password is, `raspberry`. 
 	
 * Trouble-shooting
 
 	- if you do not see the wlan0 device using `ifconfig`, then use the following command, you should see there is a folder named `iothat`. It should be something wrong if you do not see it.
 	
-		```
-		$ ls /proc/device-tree/soc/
-		```
+		`$ ls /proc/device-tree/soc/`
 		
 	- check if your board comes without the 40-pin connector soldered, make sure your soldering is correct and check the I2C ID EEPROM pins (see the pinout diagram for details). 
 	
