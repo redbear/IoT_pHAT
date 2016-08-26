@@ -254,7 +254,8 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 
 * [IoT pHAT Product Website](http://redbear.cc/iot-phat)
 * [Technical Support Forum](http://discuss.redbear.cc/c/iot-phat)
-
+* [FCC/CE Certs](docs/certifications)
+ 
 ### External
 
 * [Linux iBeacon](https://github.com/dburr/linux-ibeacon/)
