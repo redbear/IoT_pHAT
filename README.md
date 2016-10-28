@@ -32,7 +32,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 * Single antenna for concurrent WiFi and Bluetooth operations
 	- Onboard PCB antenna
 	- External antenna connector
- 	- Antenna switch for extenal antenna
+ 	- Antenna switch for external antenna
 * 32 Kbit (4 KByte) EEPROM for DTOverlay configuration
 * 40-pin connector
 	- WiFi: SDIO v2.0 - up to 20 MHz clock rate
