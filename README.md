@@ -252,7 +252,7 @@ Note that, the TXD on the RPi (as shown in the diagram) will connect to the RXD 
 
 ### RedBear
 
-* [IoT pHAT Product Website](http://redbear.cc/iot-phat)
+* [IoT pHAT Product Website](https://redbear.cc/product/rpi/iot-phat.html)
 * [Technical Support Forum](http://discuss.redbear.cc/c/iot-phat)
 * [FCC/CE Certs](docs/certifications)
  
