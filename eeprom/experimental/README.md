@@ -5,6 +5,9 @@
 
 ### Version
 
+* v0.4
+
+	- This version fixes a issue that RPi shutdown will cause kernel panic.
 * v0.3
 
 	- This version makes use the UART0 on GPIO 14 and 15 for the Bluetooth, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part. Also, this reduce the SDIO clock for WiFi from 40 MHz to 20 MHz to make it more stable.
@@ -49,9 +52,9 @@
 	
 * Download the EEPROM and script files (do this inside your RPi if you have WiFi connected already),
 
-	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/IoT_pHAT-with-dt.eep`
+	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.4/IoT_pHAT-with-dt.eep`
 
-	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.3/eepflash.sh`
+	`$ wget https://raw.githubusercontent.com/redbear/IoT_pHAT/master/eeprom/experimental/v0.4/eepflash.sh`
 
 * Change the flash tool mode to executable,
 

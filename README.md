@@ -83,11 +83,11 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 
 	- `$ cat /proc/device-tree/hat/product` 
 	- if it shows `IoT pHAT`, then the update is required.
-	- if it shows `IoT pHAT w/eep_v0.3`, then you do not need to update it.
+	- if it shows `IoT pHAT w/eep_v0.4`, then you do not need to update it.
 	
 * The WiFi is not stable with SDIO 40 MHz clock and we need to reduce to 20 MHz.
 
-* Follow [this guide](eeprom/experimental) to update the EEPROM with version 0.3.
+* Follow [this guide](eeprom/experimental) to update the EEPROM with version 0.4.
 
 ### WiFi
 
