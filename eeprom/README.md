@@ -2,12 +2,6 @@
 
 
 ## EEPROM
-
-### Prerequisites
-
-* Add `dtparam=i2c_vc=on` to the /boot/config.txt file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
-
-* After all operations, remove that line, otherwise, will affect you to use the camera module.
  
 ### If you just want to write the compiled configuration file
 

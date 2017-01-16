@@ -42,13 +42,6 @@
 		`init_uart_clock=48000000`
 
 ### Prerequisites
-
-* Add `dtparam=i2c_vc=on` to the `/boot/config.txt` file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
-
-	The steps:
-	- $ sudo nano /boot/config.txt
-	- add dtparam=i2c_vc=on to the end
-	- $ sudo reboot
 	
 * Download the EEPROM and script files (do this inside your RPi if you have WiFi connected already),
 
@@ -87,12 +80,6 @@
 * Step 4 - Reboot
 
 	`$ sudo reboot`
-
-
-### Note
-
-* After all operations, remember to remove the line (`dtparam=i2c_vc=on`) in the /boot/config.txt file, otherwise, it will affect you to use the camera module.
-
 
 ## Reference
 
