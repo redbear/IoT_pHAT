@@ -28,7 +28,7 @@
 			pinctrl-0 = <&sdio_pins>;
 			non-removable;
 			bus-width = <4>;
-			brcm,overclock-50 = <0>;
+			brcm,overclock-50 = <20>;
 			status = "okay";
 		};
 	};
@@ -45,23 +45,21 @@
 	};
 
 	fragment@5 {
-		target-path = "/";
+		target = <&leds>;
 		__overlay__ {
-			power_ctrl: power_ctrl {
-				compatible = "gpio-poweroff";
-				gpios = <&gpio 6 1>;
-				force;
+			my_led: my_led {
+				gpios = <&gpio 5 0>;
+				linux,default-trigger = "default-on";
 			};
 		};
 	};
 
 	fragment@6 {
-		target-path = "/";
+		target = <&leds>;
 		__overlay__ {
-			power_ctrl_bt: power_ctrl_bt {
-				compatible = "gpio-poweroff";
-				gpios = <&gpio 5 1>;
-				force;
+			my_led1: my_led1 {
+				gpios = <&gpio 6 0>;
+				linux,default-trigger = "default-on";
 			};
 		};
 	};
@@ -99,10 +97,10 @@
 	};
 
 	fragment@10 {
-		target = <&uart1>;
+		target = <&uart0>;
 		__overlay__ {
 			pinctrl-names = "default";
-			pinctrl-0 = <&uart1_pins>;
+			pinctrl-0 = <&uart0_pins>;
 			status = "okay";
 		};
 	};
@@ -110,9 +108,9 @@
 	fragment@11 {
 		target = <&gpio>;
 		__overlay__ {
-			uart1_pins: uart1_pins {
+			uart0_pins: uart0_pins {
 				brcm,pins = <14 15>;
-				brcm,function = <2>;
+				brcm,function = <4>;
 				brcm,pull = <0 2>;
 			};
 		};
@@ -121,15 +119,15 @@
 	fragment@12 {
 		target-path = "/chosen";
 		__overlay__ {
-			bootargs = "8250.nr_uarts=1 bcm2709.uart_clock=3000000";
+			bootargs = "8250.nr_uarts=1";
 		};
 	};
 
 	fragment@13 {
 		target-path = "/aliases";
 		__overlay__ {
-			serial0 = "/soc/uart@7e201000";
-			serial1 = "/soc/uart@7e215040";
+			serial1 = "/soc/uart@7e201000";
+			serial0 = "/soc/uart@7e215040";
 		};
 	};
 };

@@ -2,6 +2,21 @@
 
 
 ## EEPROM
+<<<<<<< HEAD
+=======
+
+### Version
+
+* Current version is 0.4
+
+* Fixed the "Kernel Panic" issue when using command "poweroff" or "halt".
+	
+### Prerequisites
+
+* Add `dtparam=i2c_vc=on` to the /boot/config.txt file, this will enable the system to access to the I2C EEPROM, and then `reboot` your RPi.
+
+* After all operations, remove that line, otherwise, will affect you to use the camera module.
+>>>>>>> defa2a46e608394d9a3aa985749fbda7db5ec135
  
 ### If you just want to write the compiled configuration file
 

@@ -28,7 +28,7 @@ product_ver 0x0001
 vendor "RedBear.cc"
 
 # ASCII product string (max 255 characters)
-product "IoT pHAT"
+product "IoT pHAT w/eep_v0.4"
 
 
 ########################################################################
@@ -65,8 +65,8 @@ back_power 0
 #setgpio  2     INPUT     DEFAULT
 #setgpio  3     INPUT     DEFAULT
 #setgpio  4     INPUT     DEFAULT
-setgpio   5     OUTPUT    UP 
-setgpio   6     OUTPUT    UP
+#setgpio   5     OUTPUT    UP 
+#setgpio   6     OUTPUT    UP
 #setgpio  7     INPUT     DEFAULT
 #setgpio  8     INPUT     DEFAULT
 #setgpio  9     INPUT     DEFAULT
@@ -74,9 +74,9 @@ setgpio   6     OUTPUT    UP
 #setgpio  11    INPUT     DEFAULT
 #setgpio  12    INPUT     DEFAULT
 #setgpio  13    INPUT     DEFAULT
-#setgpio   14    ALT5      DEFAULT
-#setgpio   15    ALT5      DEFAULT
-#setgpio   16 	ALT5      DEFAULT
+#setgpio  14    INPUT     DEFAULT
+setgpio   15    INPUT     UP
+#setgpio  16 	INPUT     DEFAULT
 setgpio   17  	OUTPUT    DOWN
 #setgpio  18    INPUT     DEFAULT
 #setgpio  19    INPUT     DEFAULT
