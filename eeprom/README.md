@@ -2,8 +2,6 @@
 
 
 ## EEPROM
-<<<<<<< HEAD
-=======
 
 ### Version
 
