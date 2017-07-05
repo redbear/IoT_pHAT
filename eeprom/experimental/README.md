@@ -4,7 +4,9 @@
 ## EEPROM
 
 ### Version
+* v0.5
 
+	- This version fixes a issue that BT does not work with 21-06-2017 version of Raspbian that is installed by NOOBS v2.4.1.
 * v0.4
 
 	- This version fixes a issue that RPi shutdown will cause kernel panic.
