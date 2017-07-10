@@ -5,10 +5,6 @@ RedBear IoT pHAT, designed for the Raspberry Pi Zero (other RPi boards with 40-p
 The RPi Zero is a nice board, it is small in size which is very good for developing IoT projects and prototypes. However, it lacks of wireless features such as WiFi and Bluetooth.
 
 With the IoT pHAT, now, your RPi Zero will get more powerful than before. It adds WiFi and Bluetooth wireless technologies to the RPi Zero.
-
-	Note for beta testers with older version of the IoT pHAT:
-
-		This is for the hardware version 1.0 only, the EEPROM contains the information for automatically starting the WiFi, Bluetooth and other settings.
 	
 * Front View
 
@@ -51,7 +47,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 	- USB Keyboard
 	- Power adapter (5V) with micro USB connector
 
-* SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 1.9.2)
+* SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 2.4.1)
 
 * Additional Items for RPi Zero
 	- Mini HDMI to normal HDMI converter
@@ -82,12 +78,8 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 * Check EEPROM firmware version
 
 	- `$ cat /proc/device-tree/hat/product` 
-	- if it shows `IoT pHAT`, then the update is required.
-	- if it shows `IoT pHAT w/eep_v0.4`, then you do not need to update it.
 	
-* The WiFi is not stable with SDIO 40 MHz clock and we need to reduce to 20 MHz.
-
-* Follow [this guide](eeprom/experimental) to update the EEPROM with version 0.4.
+* Follow [this guide](eeprom) to update the EEPROM if your one is not the latest version.
 
 ### WiFi
 
@@ -135,13 +127,7 @@ The IoT pHAT will also work on other 40-pin RPi boards such as RPi Model A+ and 
 	
 ### Bluetooth
 
-* The default UART clock (3 MHz) will not work for the Bluetooth, so we need to set the clock to 48 MHz ([issue 4](https://github.com/redbear/IoT_pHAT/issues/4), it will be fixed in the next release of Raspbian, [raspberrypi/firmware/issues/643](https://github.com/raspberrypi/firmware/issues/643)).
-
-	- use `$ sudo nano /boot/config.txt` to edit the file
-	- add `init_uart_clock=48000000` to the end
-	- reboot by `$ sudo reboot`
-
-* Again, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART which maps UART0 to GPIO 14 and 15.
+* Also, upon booting up the board, the Kernel will read from the EEPROM for all settings for the Bluetooth including the UART which maps UART0 to GPIO 14 and 15.
 
 * You will see the Bluetooth is ready to use by using the Bluetooth manager (the Bluetooth icon) near to the clock (upper-right corner) or using the command line,
 

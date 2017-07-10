@@ -4,15 +4,18 @@
 ## EEPROM
 
 ### Version
+
 * v0.5
 
-	- This version fixes a issue that BT does not work with 21-06-2017 version of Raspbian that is installed by NOOBS v2.4.1.
+	- This version fixes an issue that BT does not work with 21-06-2017 version of Raspbian that is installed by NOOBS v2.4.1.
+
 * v0.4
 
-	- This version fixes a issue that RPi shutdown will cause kernel panic.
+	- This version fixes an issue that RPi shutdown will cause kernel panic.
+
 * v0.3
 
-	- This version makes use the UART0 on GPIO 14 and 15 for the Bluetooth, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part. Also, this reduce the SDIO clock for WiFi from 40 MHz to 20 MHz to make it more stable.
+	- This version makes use of the UART0 on GPIO 14 and 15 for the Bluetooth control, but need to add `init_uart_clock=48000000` to the end of the `/boot/config.txt` file. This seems more stable than using UART1. We are also asking the RPi team if we can automate this part. Also, this reduce the SDIO clock for WiFi from 40 MHz to 20 MHz to make it more stable.
 	
 	- With this, you do not need to modify the script file from,
 	

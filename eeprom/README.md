@@ -5,9 +5,11 @@
 
 ### Version
 
-* Current version is 0.4
+* Current version is 0.5 (updated for NOOBS 2.4.1)
 
-* Fixed the "Kernel Panic" issue when using command "poweroff" or "halt".
+* v0.5
+
+	- This version fixes an issue that Bluetooth does not work with 21-06-2017 version of Raspbian that is installed by NOOBS v2.4.1.
  
 ### If you just want to write the compiled configuration file
 
