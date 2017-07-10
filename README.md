@@ -47,7 +47,7 @@ With the IoT pHAT, now, your RPi Zero will get more powerful than before. It add
 	- USB Keyboard
 	- Power adapter (5V) with micro USB connector
 
-* SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 2.4.1)
+* SD Card with [NOOBS or Raspbian](https://www.raspberrypi.org/downloads/) installed (tested on NOOBS 2.4.1 with 21-06-2017 version of Raspbian)
 
 * Additional Items for RPi Zero
 	- Mini HDMI to normal HDMI converter
