@@ -28,7 +28,7 @@ product_ver 0x0001
 vendor "RedBear.cc"
 
 # ASCII product string (max 255 characters)
-product "IoT pHAT w/eep_v0.4"
+product "IoT pHAT w/eep_v0.5"
 
 
 ########################################################################
